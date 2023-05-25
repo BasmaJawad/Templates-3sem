@@ -58,11 +58,11 @@ function putDataInTableWButton(data, index){
     tr.innerHTML =
         "<td>" + data.id + "</td>" +
         "<td>" + data.name + "</td>" +
-        "<td>" + data.owner_name + "</td>" +
-        "<td>" + data.postalCode + "</td>"+
+        "<td>" + data.email + "</td>" +
+        "<td>" + data.age + "</td>"+
         "<td>" +
-        "<button class='dataRowBtn' id='rowBtn" + index + "' value='" + data + "'>vælg</button>"
-        "</td>" +
+        "<button class='dataRowBtn' id='rowBtn" + index + "' value='" + data + "'>vælg</button>" +
+        "</td>"
 
     tableBody.appendChild(tr)
 
@@ -73,7 +73,7 @@ function putDataInTableWButton(data, index){
     btn.addEventListener("click", () => {
 
         //her skal der stå hvad der skal gøres
-        //fx data i localstorage
+        //fx put data i localstorage
 
         localStorage.setItem("data", JSON.stringify(data))
 
