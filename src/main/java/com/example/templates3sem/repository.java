@@ -10,8 +10,8 @@ public interface repository extends JpaRepository<Model, Integer> { //klassen, p
 
     //eksempler
 
-    List<Model> findReservationByDate(String date);
+    List<Model> findModelByDate(String date);
 
-    List<Model> findReservationByCustomerEmailOrderByDateAsc(String email);
+    List<Model> findModelByEmailOrderByDateAsc(String email);
 
 }
