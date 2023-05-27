@@ -30,4 +30,9 @@ public class controller {
     public ResponseEntity<Model> updateRestaurant(@PathVariable int id, @RequestBody Model model) {
         return service.updateData(id, model);
     }
+
+    @DeleteMapping("/deleteData/{id}")
+    public ResponseEntity<Model> deleteData(@PathVariable int id) {
+        return service.deleteData(id);
+    }
 }

@@ -34,4 +34,15 @@ public class service {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    public ResponseEntity<Model> deleteData(int id){
+        //finder bruger først
+        Optional<Model> modelOptional = repository.findById(id);
+
+        if (modelOptional.isPresent()) {
+            repository.deleteById(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
 }

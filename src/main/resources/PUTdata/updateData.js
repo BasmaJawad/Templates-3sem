@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     editData();
 });
 
+
+//FØRST VISER VI DATA I INPUT FIELDS
 function editData(){
 
     //hent først inputfields fra html'en så vi kan udfylde dem
@@ -31,10 +33,11 @@ updateBtn.addEventListener("click", updateData)
 
 function updateData(){
 
-    //først opdateres objektet
+    //først hentes de nye værdier fra inputfields
     const inputFields = document.querySelectorAll('.updateInputField');
 
     //tjekker for alle felter og opdaterer objektet hvis der er ændringer
+
     inputFields.forEach(inputField => {
         const fieldName = inputField.name;
         const fieldValue = inputField.value.trim(); //trimmer mellemrum
