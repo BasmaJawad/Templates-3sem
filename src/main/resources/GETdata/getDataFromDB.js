@@ -1,3 +1,8 @@
+
+//--------------------------------------------------------------------------------------------
+// hent data fra DB og put i tabellen
+//--------------------------------------------------------------------------------------------
+
 function fetchAny(url) {
     console.log(url)
     return fetch(url).then((response) => response.json())
@@ -5,7 +10,7 @@ function fetchAny(url) {
 
 async function fetchData(){
 
-    const url = "http://localhost:8080/..." /* husk at skrive den rigtige endpoint */
+    const url = "http://localhost:8080/getAllData" /* husk at skrive den rigtige endpoint */
 
     const data = await fetchAny(url)
 
@@ -19,7 +24,7 @@ function putDataInTable(data){
 
     const tr = document.createElement("tr")
 
-    tr.innerHTML =
+    tr.innerHTML = //blot eksempler på hvad der kan stå i tabellen
         "<td>" + data.id + "</td>" +
         "<td>" + data.name + "</td>" +
         "<td>" + data.owner_name + "</td>" +
@@ -35,12 +40,9 @@ fetchData()
 
 
 
-
-
-
-
-
-
+//--------------------------------------------------------------------------------------------
+// hent data fra DB og put i tabellen MED KNAPPER - i stedet for function putDataInTable(data)
+//--------------------------------------------------------------------------------------------
 
 
 /* hvis der skal være KNAPPER i tabellen som man kan klikke videre på*/
@@ -58,11 +60,11 @@ function putDataInTableWButton(data, index){
     tr.innerHTML =
         "<td>" + data.id + "</td>" +
         "<td>" + data.name + "</td>" +
-        "<td>" + data.owner_name + "</td>" +
-        "<td>" + data.postalCode + "</td>"+
+        "<td>" + data.email + "</td>" +
+        "<td>" + data.age + "</td>"+
         "<td>" +
-        "<button class='dataRowBtn' id='rowBtn" + index + "' value='" + data + "'>vælg</button>"
-        "</td>" +
+        "<button class='dataRowBtn' id='rowBtn" + index + "' value='" + data + "'>vælg</button>" +
+        "</td>"
 
     tableBody.appendChild(tr)
 
@@ -73,7 +75,7 @@ function putDataInTableWButton(data, index){
     btn.addEventListener("click", () => {
 
         //her skal der stå hvad der skal gøres
-        //fx data i localstorage
+        //fx put data i localstorage
 
         localStorage.setItem("data", JSON.stringify(data))
 

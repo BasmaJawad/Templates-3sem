@@ -38,6 +38,7 @@ async function submitData(event){
         }
         else {
             alert("Postet til DB")
+            //og hvad den skal gøre når den er postet
         }
 
     } catch (error){

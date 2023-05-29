@@ -10,21 +10,24 @@
 
 <h1>Edit Information</h1>
 
-<form id="editForm">
-    <label for="field1">Field 1:</label>
-    <input type="text" id="field1" name="field1" />
+<div id="inputWrapper">
 
-    <label for="field2">Field 2:</label>
-    <input type="text" id="field2" name="field2" />
 
-    <label for="field3">Field 3:</label>
-    <input class="readOnlyInput" type="text" id="field3" name="field3" readonly />
 
-    <!-- Add more input fields for other data fields -->
+<label for="field1">Field 1:</label> <br>
+<input class="updateInputField" type="text" id="field1" name="field1"/><br>
 
-    <button type="submit">Save</button>
-</form>
+<label for="field2">Field 2:</label><br>
+<input class="updateInputField" type="text" id="field2" name="field2"/><br>
 
+<label for="field3">Field 3:</label><br>
+<input class="updateInputField" type="text" id="field3" name="field3"/><br>
+<br>
+
+<!-- Add more input fields for other data fields -->
+
+<button id="updateBtn" type="submit">Save</button>
+</div>
 
 <script src="updateData.js"></script>
 
